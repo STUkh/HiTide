@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # add stretch repo to sources list
-echo "deb http://archive.raspbian.org/raspbian stretch main" >> /etc/apt/sources.list
+echo "deb http://security.debian.org/debian-security jessie/updates main" >> /etc/apt/sources.list
 
 # update package list and install dependencies
 apt update
