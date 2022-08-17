@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# For ARM64 arch add next
-dpkg --add-architecture armhf
+# For ARM64 arch add next line and add ":armhf" postfix to all packages
+#dpkg --add-architecture armhf
 
 # add stretch repo to sources list
 echo "deb http://security.debian.org/debian-security jessie/updates main" >> /etc/apt/sources.list
