@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # For ARM64 arch add next line and add ":armhf" postfix to all packages
-#dpkg --add-architecture armhf
+dpkg --add-architecture armhf
 
 # add stretch repo to sources list
 echo "deb http://security.debian.org/debian-security jessie/updates main" >> /etc/apt/sources.list
@@ -10,10 +10,8 @@ echo "deb http://security.debian.org/debian-security jessie/updates main" >> /et
 apt-get update
 
 # Add armhf interpretator
-apt-get install libc6:armhf
-
-apt-get install -y multiarch-support git libportaudio2* alsa-utils libavahi-common3 libavahi-client3
-apt-get install -y multiarch-support libssl1.0.0*:armhf libflac++6v5*:armhf
+apt-get install -y multiarch-support git
+apt-get install -y libc6:armhf libportaudio2*:armhf alsa-utils:armhf libavahi-common3:armhf libavahi-client3:armhf libssl1.0.0*:armhf libflac++6v5*:armhf
 
 #more shared libraries for debian buster
 echo "deb https://deb.debian.org/debian/ stretch main contrib non-free" >> /etc/apt/sources.list
