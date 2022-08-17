@@ -8,7 +8,12 @@ echo "deb http://security.debian.org/debian-security jessie/updates main" >> /et
 
 # update package list and install dependencies
 apt-get update
-apt-get install -y multiarch-support libssl1.0.0* git libportaudio2* libflac++6v5* libavahi-common3 libavahi-client3 alsa-utils
+
+# Add armhf interpretator
+apt-get install libc6:armhf
+
+apt-get install -y multiarch-support git libportaudio2* alsa-utils libavahi-common3 libavahi-client3
+apt-get install -y multiarch-support libssl1.0.0*:armhf libflac++6v5*:armhf
 
 #more shared libraries for debian buster
 echo "deb https://deb.debian.org/debian/ stretch main contrib non-free" >> /etc/apt/sources.list
@@ -16,8 +21,8 @@ echo "deb https://deb.debian.org/debian/ stretch-updates main contrib non-free" 
 echo "deb http://security.debian.org/debian-security stretch/updates main contrib non-free" >> /etc/apt/sources.list
 
 apt-get update
-apt-get install -y libavformat57
-apt-get install -y libcurl3
+apt-get install -y libavformat57:armhf
+apt-get install -y libcurl3:armhf
 
 # create working folder
 mkdir /usr/ifi
